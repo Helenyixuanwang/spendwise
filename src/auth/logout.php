@@ -1,6 +1,6 @@
 <?php
 session_start();
-session_destroy();
-header('Location: login.php');
-exit;
-?>
+require_once __DIR__ . '/../controllers/AuthController.php';
+
+$controller = new AuthController();
+$controller->logout();
